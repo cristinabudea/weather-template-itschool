@@ -57,3 +57,10 @@ main {
 header {
   height: 30vh;
 }
+
+.current-weather {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+}

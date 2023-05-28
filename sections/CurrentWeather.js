@@ -19,6 +19,22 @@ function displayCurrentWeather(city) {
       console.log(weatherDescription);
       console.log(weatherIcon);
       console.log(windSpeed);
+      let currentWeatherContainer = document.querySelector(".current-weather");
+      currentWeatherContainer.innerHTML = `
+        <div class="px-3">
+          <div class="fs-2 mb-2"><strong>${name}</strong></div>
+          <div class="fs-4"><strong>${day}</strong>, ${hours}</div>
+          <div class="d-flex align-items-center">
+            <strong class="fs-1">${temperature}°C</strong>
+            <img src="${weatherIcon}" />
+        </div>
+        </div>
+        <div class="px-3">
+          <p class="fs-5">Real feel: <strong>${realFeel}°C</strong></p>
+          <p class="fs-5 text-capitalize">${weatherDescription}</p>
+          <p class="fs-5">Vânt: <strong>${windSpeed} km/h</strong></p>
+        </div>
+      `;
     });
 }
 
