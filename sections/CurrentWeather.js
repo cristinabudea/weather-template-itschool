@@ -27,7 +27,7 @@ function displayCurrentWeather(city) {
           <div class="d-flex align-items-center">
             <strong class="fs-1">${temperature}°C</strong>
             <img src="${weatherIcon}" />
-        </div>
+          </div>
         </div>
         <div class="px-3">
           <p class="fs-5">Real feel: <strong>${realFeel}°C</strong></p>
@@ -37,5 +37,3 @@ function displayCurrentWeather(city) {
       `;
     });
 }
-
-displayCurrentWeather("Sibiu");
