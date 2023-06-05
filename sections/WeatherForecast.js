@@ -7,15 +7,26 @@ function displayWeatherForecast(city) {
     .then((data) => {
       console.log(data);
       const { list } = data;
-      const daysMap = {};
       list.forEach((element) => {
-        const { dt } = element;
+        const { dt, main, weather } = element;
         const day = getDayOfTheWeek(dt);
-        if (daysMap[day]) {
-          daysMap[day].push(element);
-        } else {
-          daysMap[day] = [element];
-        }
+        const hour = getHour(dt);
+        const temperature = Math.round(main.temp);
+        const realFeel = Math.round(main.feels_like);
+        const weatherDescription = weather[0].description;
+        const weatherIcon = getWeatherIcon(weather[0].icon);
+        weatherForecastContainer.innerHTML += `
+          <div class="weather-forecast-box w-100 d-flex justify-content-between align-items-center">
+            <div>
+              <div><strong>${day}</strong></div>
+              <div>${hour}</div>
+            </div>
+            <div><img src="${weatherIcon}" alt="" /></div>
+            <div><strong>${temperature}°</strong></div>
+            <div>${weatherDescription}</div>
+            <div>Real feel: ${realFeel}</div>
+          </div>
+        `;
       });
     });
 }
