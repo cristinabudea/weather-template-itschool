@@ -22,9 +22,9 @@ function displayWeatherForecast(city) {
               <div>${hour}</div>
             </div>
             <div><img src="${weatherIcon}" alt="" /></div>
-            <div><strong>${temperature}°</strong></div>
+            <div class="fs-3"><strong>${temperature}°C</strong></div>
             <div>${weatherDescription}</div>
-            <div>Real feel: ${realFeel}</div>
+            <div>Real feel: <strong>${realFeel}°C</strong></div>
           </div>
         `;
       });
